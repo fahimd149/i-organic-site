@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Layout from "../components/layout"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -7,16 +8,18 @@ export default function Template({
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark
   return (
-    <div className="product-container">
-      <div className="product">
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.price}</h2>
-        <div
-          className="product-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+    <Layout>
+      <div className="product-container">
+        <div className="product">
+          <h1>{frontmatter.title}</h1>
+          <h2>{frontmatter.price}</h2>
+          <div
+            className="product-content"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 
