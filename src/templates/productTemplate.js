@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img from 'gatsby-image';
 import Layout from "../components/layout"
 
 export default function Template({
@@ -11,6 +12,7 @@ export default function Template({
     <Layout>
       <div className="product-container">
         <div className="product">
+          {frontmatter.image && <Img fluid={frontmatter.image.childImageSharp.fluid} />}
           <h1>{frontmatter.title}</h1>
           <h2>{frontmatter.price}</h2>
           <div
@@ -31,6 +33,7 @@ export const pageQuery = graphql`
         price
         path
         title
+        image
       }
     }
   }

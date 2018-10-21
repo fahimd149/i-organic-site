@@ -2,8 +2,13 @@
 path: "/product/burgers"
 price: "£100,001"
 title: "Mmmm Burgers"
+image: "./images.jpg"
 ---
 
-Blah sd as dfa s[sldkflsakdf s dfas d]
+<img alt="salt" src="./images.jpg" />
 
-10000
+I'd rather be a bird than a fish.
+
+£100,001
+
+Buy now

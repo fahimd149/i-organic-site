@@ -2,8 +2,13 @@
 path: "/product/salt"
 price: "£100,000"
 title: "Mmmm Salt"
+image: "./images-1.jpg"
 ---
 
-Blah sd as dfa s[sldkflsakdf s dfas d]
+ <img alt="salt" src="./images-1.jpg" />
 
-10000
+I currently have 4 windows open up… and I don’t know why.
+
+£100,000
+
+Buy now
