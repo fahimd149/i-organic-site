@@ -11,6 +11,7 @@ const Container = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 1.45rem 1.0875rem;
 `
 
 const Layout = ({ children }) => (
