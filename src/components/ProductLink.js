@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
+import ProductTitle from './ProductTitle';
 
 const Container = styled.div`
   max-width: 590px;
@@ -18,7 +19,7 @@ const ProductLink = ({ product }) => (
       {product.frontmatter.image && (
         <Img fluid={product.frontmatter.image.childImageSharp.fluid} />
       )}
-      {product.frontmatter.title} ({product.frontmatter.price})
+      <ProductTitle {...product.frontmatter} />
     </Link>
   </Container>
 )

@@ -1,7 +1,10 @@
+import { graphql, Link } from 'gatsby'
 import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/layout'
+import Img from 'gatsby-image'
 import styled from 'styled-components'
+import Layout from '../components/layout'
+import ProductTitle from '../components/ProductTitle'
+import './product.css'
 
 const Container = styled.div`
   max-width: 590px;
@@ -16,10 +19,13 @@ export default function Template({
   return (
     <Layout>
       <Container>
+        <Link to="/">Back</Link>
         <div>
-          <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.price}</h2>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          {frontmatter.image && (
+            <Img fluid={frontmatter.image.childImageSharp.fluid} />
+          )}
+          <ProductTitle {...frontmatter} />
+          <div dangerouslySetInnerHTML={{ __html: html }} className="product" />
         </div>
       </Container>
     </Layout>
@@ -34,6 +40,13 @@ export const pageQuery = graphql`
         price
         path
         title
+        image {
+          childImageSharp {
+            fluid(maxHeight: 350, maxWidth: 550) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

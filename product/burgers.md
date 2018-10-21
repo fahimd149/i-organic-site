@@ -1,11 +1,9 @@
 ---
 path: "/product/burgers"
-price: "£100,001"
+price: "£6.69 each"
 title: "Mmmm Burgers"
 image: "../src/images/images.jpg"
 ---
-
-<img alt="salt" src="../src/images/images.jpg" />
 
 I'd rather be a bird than a fish.
 
