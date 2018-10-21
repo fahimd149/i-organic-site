@@ -19,7 +19,15 @@ export default function Template({
   return (
     <Layout>
       <Container>
-        <Link to="/">Back</Link>
+        <Link
+          to="/"
+          style={{
+            color: 'black',
+            textDecoration: 'none',
+          }}
+        >
+          Back
+        </Link>
         <div>
           {frontmatter.image && (
             <Img fluid={frontmatter.image.childImageSharp.fluid} />

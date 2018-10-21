@@ -2,12 +2,11 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import ProductTitle from './ProductTitle';
+import ProductTitle from './ProductTitle'
 
 const Container = styled.div`
   max-width: 590px;
   width: 100%;
-  margin: 12px;
   &:last-child {
     margin-bottom: 0;
   }
@@ -15,7 +14,13 @@ const Container = styled.div`
 
 const ProductLink = ({ product }) => (
   <Container>
-    <Link to={product.frontmatter.path}>
+    <Link
+      to={product.frontmatter.path}
+      style={{
+        color: 'black',
+        textDecoration: 'none',
+      }}
+    >
       {product.frontmatter.image && (
         <Img fluid={product.frontmatter.image.childImageSharp.fluid} />
       )}
