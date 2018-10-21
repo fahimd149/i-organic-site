@@ -1,6 +1,6 @@
-import React from "react"
-import { graphql } from "gatsby"
-import ProductLink from "../components/ProductLink"
+import React from 'react'
+import { graphql } from 'gatsby'
+import ProductLink from '../components/ProductLink'
 import Layout from '../components/layout'
 
 const IndexPage = ({
@@ -8,11 +8,15 @@ const IndexPage = ({
     allMarkdownRemark: { edges },
   },
 }) => {
-  const Products = edges
-    .filter(edge => !!edge.node.frontmatter.price) // You can filter your posts based on some criteria
-    .map(edge => <ProductLink key={edge.node.id} product={edge.node} />)
-
-  return <Layout>{Products}</Layout>
+  return (
+    <Layout>
+      {edges
+        .filter(edge => !!edge.node.frontmatter.price) // You can filter your posts based on some criteria
+        .map(edge => (
+          <ProductLink key={edge.node.id} product={edge.node} />
+        ))}
+    </Layout>
+  )
 }
 
 export default IndexPage

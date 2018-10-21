@@ -6,11 +6,12 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'i-organic',
-        short_name: 'starter',
+        short_name: 'organic produce',
         start_url: '/',
         background_color: '#81c784',
         theme_color: '#81c784',

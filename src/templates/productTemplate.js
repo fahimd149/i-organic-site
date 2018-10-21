@@ -1,6 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  max-width: 590px;
+  width: 100%;
+`
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -9,16 +15,13 @@ export default function Template({
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
-      <div className="product-container">
-        <div className="product">
+      <Container>
+        <div>
           <h1>{frontmatter.title}</h1>
           <h2>{frontmatter.price}</h2>
-          <div
-            className="product-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+          <div dangerouslySetInnerHTML={{ __html: html }} />
         </div>
-      </div>
+      </Container>
     </Layout>
   )
 }
