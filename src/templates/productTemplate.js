@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from 'gatsby-image';
+// import Img from 'gatsby-image';
 import Layout from "../components/layout"
 
 export default function Template({
@@ -8,11 +8,11 @@ export default function Template({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark
+  console.log(frontmatter);
   return (
     <Layout>
       <div className="product-container">
         <div className="product">
-          {frontmatter.image && <Img fluid={frontmatter.image.childImageSharp.fluid} />}
           <h1>{frontmatter.title}</h1>
           <h2>{frontmatter.price}</h2>
           <div
@@ -38,3 +38,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+// {frontmatter.image && <Img fluid={frontmatter.image.childImageSharp.fluid} />}

@@ -2,7 +2,7 @@
 path: "/product/burgers"
 price: "£100,001"
 title: "Mmmm Burgers"
-image: "./images.jpg"
+image: "../../product/images.jpg"
 ---
 
 <img alt="salt" src="./images.jpg" />
