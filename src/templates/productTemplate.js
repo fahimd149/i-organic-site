@@ -1,14 +1,12 @@
-import React from "react"
-import { graphql } from "gatsby"
-// import Img from 'gatsby-image';
-import Layout from "../components/layout"
+import React from 'react'
+import { graphql } from 'gatsby'
+import Layout from '../components/layout'
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark
-  console.log(frontmatter);
   return (
     <Layout>
       <div className="product-container">
@@ -33,10 +31,7 @@ export const pageQuery = graphql`
         price
         path
         title
-        image
       }
     }
   }
 `
-
-// {frontmatter.image && <Img fluid={frontmatter.image.childImageSharp.fluid} />}

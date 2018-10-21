@@ -28,6 +28,13 @@ export const pageQuery = graphql`
             price
             path
             title
+            image {
+              childImageSharp {
+                fluid(maxHeight: 350, maxWidth: 550) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
