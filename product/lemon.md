@@ -6,7 +6,3 @@ image: "../src/images/images.jpg"
 ---
 
 I'd rather be a bird than a fish.
-
-£1.69
-
-Buy now

@@ -1,5 +1,9 @@
+.product {
+  margin: 0.4rem;
+}
+
 .product .gatsby-resp-image-wrapper {
-  margin: 2rem;
+  margin: 0.4rem;
   margin-left: 0 !important;
   margin-right: 0 !important;
 }

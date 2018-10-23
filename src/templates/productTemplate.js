@@ -19,21 +19,38 @@ export default function Template({
   return (
     <Layout>
       <Container>
-        <Link
-          to="/"
-          style={{
-            color: 'black',
-            textDecoration: 'none',
-          }}
-        >
-          Back
-        </Link>
         <div>
           {frontmatter.image && (
             <Img fluid={frontmatter.image.childImageSharp.fluid} />
           )}
           <ProductTitle {...frontmatter} />
           <div dangerouslySetInnerHTML={{ __html: html }} className="product" />
+          <Link
+            to="buy-now"
+            style={{
+              color: 'black',
+              textDecoration: 'none',
+              border: '1px solid black',
+              borderRadius: 4,
+              padding: 20,
+              marginBottom: 10,
+            }}
+          >
+            Buy now
+          </Link>
+          <Link
+            to="/"
+            style={{
+              color: 'black',
+              textDecoration: 'none',
+              border: '1px solid black',
+              borderRadius: 4,
+              padding: 20,
+              marginBottom: 10,
+            }}
+          >
+            Back to products
+          </Link>
         </div>
       </Container>
     </Layout>

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import { StripeProvider } from 'react-stripe-elements'
 import Header from './header'
 import './base.css'
 
@@ -11,7 +12,6 @@ const Container = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 1.45rem 1.0875rem;
 `
 
 const Layout = ({ children }) => (
@@ -26,7 +26,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <div>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -34,11 +34,14 @@ const Layout = ({ children }) => (
             { name: 'keywords', content: 'organic, france' },
           ]}
         >
+          <script src="https://js.stripe.com/v3/" />
           <html lang="en" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <Container>{children}</Container>
-      </>
+        <StripeProvider apiKey="pk_test_12345">
+          <Container>{children}</Container>
+        </StripeProvider>
+      </div>
     )}
   />
 )
