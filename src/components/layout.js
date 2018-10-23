@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
-import { StripeProvider } from 'react-stripe-elements'
+// import { StripeProvider } from 'react-stripe-elements'
 import Header from './header'
 import './base.css'
 
@@ -38,9 +38,9 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <StripeProvider apiKey="pk_test_12345">
+        {/* <StripeProvider apiKey="pk_test_12345"> */}
           <Container>{children}</Container>
-        </StripeProvider>
+        {/* </StripeProvider> */}
       </div>
     )}
   />
